@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dongyan Medical Centre</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5faff;
+    color: #263746;
+}
+
+/* HEADER */
+
+header {
+    background: white;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px #0001;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #0879bd;
+}
+
+.logo span {
+    color: #16b89a;
+}
+
+nav a {
+    text-decoration: none;
+    color: #263746;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #0879bd;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background: linear-gradient(90deg, #e5f5ff, #ffffff);
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #075b91;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #14ae92;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #0879bd;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #075b91;
+}
+
+.hero-image {
+    margin-left: auto;
+    font-size: 170px;
+}
+
+/* COMMON SECTION */
+
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    color: #075b91;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #647582;
+    line-height: 1.7;
+}
+
+/* ABOUT */
+
+.about {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background: white;
+}
+
+.about-box {
+    flex: 1;
+}
+
+.about-box h2 {
+    color: #0879bd;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-box p {
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+.about-icon {
+    flex: 1;
+    text-align: center;
+    font-size: 150px;
+    background: #e4f5ff;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+/* SERVICES */
+
+.services {
+    background: #f0f8ff;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #0000000c;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+.service-card .icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: #0879bd;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    line-height: 1.6;
+    color: #647582;
+}
+
+/* DOCTORS */
+
+.doctors {
+    background: white;
+}
+
+.doctor-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.doctor-card {
+    background: #f1f9ff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.doctor-avatar {
+    background: #d5efff;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin: auto auto 15px;
+    display: grid;
+    place-items: center;
+    font-size: 55px;
+}
+
+.doctor-card h3 {
+    color: #0879bd;
+    margin-bottom: 10px;
+}
+
+/* FACILITIES */
+
+.facilities {
+    background: #e9f6ff;
+}
+
+.facility-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.facility {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.facility h3 {
+    margin: 10px 0;
+    color: #0879bd;
+}
+
+/* APPOINTMENT */
+
+.appointment {
+    background: white;
+}
+
+.form-container {
+    max-width: 750px;
+    margin: auto;
+    background: #f1f9ff;
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #cbdce8;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.form-container textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-container button {
+    width: 100%;
+}
+
+/* CONTACT */
+
+.contact {
+    background: #f0f8ff;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.contact-info,
+.hours {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.contact-info h3,
+.hours h3 {
+    color: #0879bd;
+    margin-bottom: 20px;
+}
+
+.contact-info p,
+.hours p {
+    line-height: 2;
+}
+
+.emergency {
+    background: #0879bd;
+    color: white;
+    padding: 35px;
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 12px;
+}
+
+.emergency h2 {
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #063b60;
+    color: white;
+    padding: 35px 8%;
+    text-align: center;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #8de5ff;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+    .service-container,
+    .doctor-container,
+    .facility-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-image {
+        font-size: 100px;
+    }
+}
+
+@media(max-width: 650px) {
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        background: white;
+        width: 100%;
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero-image {
+        margin: 30px auto;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .service-container,
+    .doctor-container,
+    .facility-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 50px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <div class="logo">
+        Dongyan <span>Medical Centre</span>
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#appointment">Appointment</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>
+            Welcome to <span>Dongyan Medical Centre</span>
+        </h1>
+
+        <p>
+            Your Health, Our Priority. We are committed to
+            providing quality healthcare, professional medical
+            services and compassionate patient care.
+        </p>
+
+        <a href="#appointment" class="btn">
+            Book an Appointment
+        </a>
+    </div>
+
+    <div class="hero-image">🏥</div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="about-box">
+        <h2>About Our Medical Centre</h2>
+
+        <p>
+            Dongyan Medical Centre is a healthcare website
+            concept designed to provide information about
+            medical services, patient care and healthcare
+            facilities.
+        </p>
+
+        <p>
+            Our aim is to make healthcare information easily
+            accessible and help patients connect with the
+            appropriate medical services.
+        </p>
+
+        <p>
+            We believe in patient safety, professional care,
+            accurate diagnosis and a comfortable healthcare
+            experience.
+        </p>
+
+        <a href="#services" class="btn">Explore Our Services</a>
+    </div>
+
+    <div class="about-icon">🩺</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <h2 class="section-title">Our Medical Services</h2>
+
+    <p class="section-description">
+        Healthcare services and medical facilities.
+    </p>
+
+    <div class="service-container">
+
+        <div class="service-card">
+            <div class="icon">🩺</div>
+            <h3>General Medicine</h3>
+            <p>
+                General health consultation, examination
+                and treatment of common medical conditions.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🩻</div>
+            <h3>Radiology & Imaging</h3>
+            <p>
+                Diagnostic imaging services such as X-ray,
+                ultrasound and other imaging procedures,
+                subject to availability.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🔬</div>
+            <h3>Pathology Laboratory</h3>
+            <p>
+                Laboratory investigations and diagnostic
+                testing to support medical evaluation.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">❤️</div>
+            <h3>Cardiology</h3>
+            <p>
+                Heart health assessment and consultation
+                for cardiovascular conditions.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">👶</div>
+            <h3>Paediatrics</h3>
+            <p>
+                Healthcare services for infants, children
+                and growing adolescents.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🚑</div>
+            <h3>Emergency Care</h3>
+            <p>
+                Emergency medical assistance and patient
+                evaluation according to available facilities.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- DOCTORS -->
+
+<section class="doctors" id="doctors">
+
+    <h2 class="section-title">Our Medical Team</h2>
+
+    <p class="section-description">
+        Dedicated healthcare professionals.
+    </p>
+
+    <div class="doctor-container">
+
+        <div class="doctor-card">
+            <div class="doctor-avatar">👨‍⚕️</div>
+            <h3>General Physician</h3>
+            <p>General Medicine Specialist</p>
+            <p>Consultation by appointment</p>
+        </div>
+
+        <div class="doctor-card">
+            <div class="doctor-avatar">👩‍⚕️</div>
+            <h3>Radiologist</h3>
+            <p>Diagnostic Imaging Specialist</p>
+            <p>Consultation by appointment</p>
+        </div>
+
+        <div class="doctor-card">
+            <div class="doctor-avatar">👨‍⚕️</div>
+            <h3>Medical Specialist</h3>
+            <p>Specialist Consultation</p>
+            <p>Consultation by appointment</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FACILITIES -->
+
+<section class="facilities" id="facilities">
+
+    <h2 class="section-title">Our Facilities</h2>
+
+    <p class="section-description">
+        Designed around patient comfort and healthcare needs.
+    </p>
+
+    <div class="facility-container">
+
+        <div class="facility">
+            <h2>🏥</h2>
+            <h3>Modern Infrastructure</h3>
+            <p>Comfortable and organized healthcare environment.</p>
+        </div>
+
+        <div class="facility">
+            <h2>🧪</h2>
+            <h3>Diagnostic Facilities</h3>
+            <p>Diagnostic testing and investigation facilities.</p>
+        </div>
+
+        <div class="facility">
+            <h2>🧑‍⚕️</h2>
+            <h3>Expert Care</h3>
+            <p>Professional medical consultation and patient support.</p>
+        </div>
+
+        <div class="facility">
+            <h2>🛏️</h2>
+            <h3>Patient Comfort</h3>
+            <p>Patient-friendly environment and assistance.</p>
+        </div>
+
+        <div class="facility">
+            <h2>💻</h2>
+            <h3>Digital Support</h3>
+            <p>Convenient online information and appointment requests.</p>
+        </div>
+
+        <div class="facility">
+            <h2>🧼</h2>
+            <h3>Hygiene & Safety</h3>
+            <p>Focus on cleanliness and patient safety.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- APPOINTMENT -->
+
+<section class="appointment" id="appointment">
+
+    <h2 class="section-title">Book an Appointment</h2>
+
+    <p class="section-description">
+        Fill out the form to submit your appointment request.
+    </p>
+
+    <div class="form-container">
+
+        <form id="appointmentForm">
+
+            <input type="text"
+            id="name"
+            placeholder="Patient Full Name"
+            required>
+
+            <input type="tel"
+            id="phone"
+            placeholder="Mobile Number"
+            pattern="[0-9]{10}"
+            title="Enter a 10-digit mobile number"
+            required>
+
+            <input type="email"
+            id="email"
+            placeholder="Email Address">
+
+            <select id="department" required>
+                <option value="">Select Department</option>
+                <option>General Medicine</option>
+                <option>Radiology & Imaging</option>
+                <option>Pathology Laboratory</option>
+                <option>Cardiology</option>
+                <option>Paediatrics</option>
+            </select>
+
+            <input type="date"
+            id="date"
+            required>
+
+            <textarea
+            id="message"
+            placeholder="Describe your problem or reason for appointment"></textarea>
+
+            <button type="submit" class="btn">
+                Submit Appointment Request
+            </button>
+
+        </form>
+
+        <p id="result" style="margin-top:20px;"></p>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">Contact Us</h2>
+
+    <p class="section-description">
+        Get in touch with Dongyan Medical Centre.
+    </p>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <h3>Contact Information</h3>
+
+            <p>📍 Address: Add Your Medical Centre Address</p>
+
+            <p>📞 Phone: +91 XXXXXXXXXX</p>
+
+            <p>✉️ Email: info@dongyanmedicalcentre.com</p>
+
+            <p>🌐 Website: www.dongyanmedicalcentre.com</p>
+
+        </div>
+
+        <div class="hours">
+
+            <h3>Opening Hours</h3>
+
+            <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
+
+            <p>Saturday: 9:00 AM - 6:00 PM</p>
+
+            <p>Sunday: As per availability</p>
+
+            <p>Emergency: Confirm availability by phone</p>
+
+        </div>
+
+    </div>
+
+    <div class="emergency">
+
+        <h2>Need Medical Assistance?</h2>
+
+        <p>
+            For emergencies, contact your local emergency
+            services or visit the nearest emergency department.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>Dongyan Medical Centre</h2>
+
+    <p>Your Health, Our Priority.</p>
+
+    <p>
+        <a href="#home">Home</a> |
+        <a href="#about">About</a> |
+        <a href="#services">Services</a> |
+        <a href="#contact">Contact</a>
+    </p>
+
+    <p>
+        © 2026 Dongyan Medical Centre.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// MOBILE MENU
+
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+}
+
+// CLOSE MENU AFTER CLICK
+
+document.querySelectorAll("#navbar a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navbar").classList.remove("active");
+    });
+});
+
+// SET MINIMUM APPOINTMENT DATE
+
+document.getElementById("date").min =
+    new Date().toISOString().split("T")[0];
+
+// APPOINTMENT FORM
+
+document.getElementById("appointmentForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let department = document.getElementById("department").value;
+    let date = document.getElementById("date").value;
+
+    let result = document.getElementById("result");
+
+    result.style.color = "green";
+
+    result.innerHTML =
+        "Thank you, " + name +
+        "! Your appointment request has been prepared." +
+        "<br>Department: " + department +
+        "<br>Date: " + date +
+        "<br>Phone: " + phone +
+        "<br><br>Please contact the centre to confirm your appointment.";
+
+    this.reset();
+
+    document.getElementById("date").min =
+        new Date().toISOString().split("T")[0];
+
+});
+
+</script>
+
+</body>
+</html>
